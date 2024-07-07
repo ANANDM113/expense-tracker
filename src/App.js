@@ -70,7 +70,7 @@ export default function App(){
           expenseToUpdate={expenseToUpdate}
           resetExpenseToUpdate  = {resetExpenseToUpdate}
           />
-        <div>
+        <div className="expenseContainer">
           <ExpenseInfo expenses={state.expenses} />
           <ExpenseList expenses={state.expenses} 
             deleteExpense={deleteExpense} 
