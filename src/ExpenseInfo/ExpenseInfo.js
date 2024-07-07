@@ -1,3 +1,4 @@
+import styles from "./ExpenseInfo.module.css";
 
 export default function ExpenseInfo({expenses}){
 
@@ -16,19 +17,23 @@ export default function ExpenseInfo({expenses}){
     },0); 
 
     return(
-        <div>
-            <div>
-                <h4>Your Balance</h4>
+        <div className={styles.expenseInfoContainer}>
+            <div className={styles.balance}>
+                <h3>YOUR BALANCE</h3>
                 <h1>${grandTotal.toFixed(2)}</h1>
             </div>
-            <div>
+            <div className={styles.incomeExpenseContainer}>
                 <div>
-                    <h3>INCOME</h3>
-                    <p>+${profitAmount}</p>
+                    <h4>INCOME</h4>
+                    <p className={`${styles.money} ${styles.plus}`}>
+                        +${profitAmount}
+                    </p>
                 </div>
                 <div>
-                    <h3>EXPENSE</h3>
-                    <p>-${lossAmount}</p>
+                    <h4>EXPENSE</h4>
+                    <p className={`${styles.money} ${styles.minus}`}>
+                        -${lossAmount}
+                    </p>
                 </div>
             </div>
         </div>

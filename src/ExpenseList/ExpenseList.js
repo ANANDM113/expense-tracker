@@ -1,10 +1,11 @@
 import Transaction from "../Transaction/Transaction";
+import styles from "./ExpenseList.module.css";
 
 export default function ExpenseList({expenses,deleteExpense,changeExpenseToUpdate}){
     return(
-        <div>
+        <div className={styles.expenseListContainer}>
             <h3>Transactions</h3>
-            <ul>
+            <ul className={styles.transactionList}>
                 {
                     expenses.map((expense,i)=>{
                         return(

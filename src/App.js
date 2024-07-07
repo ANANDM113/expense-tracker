@@ -2,6 +2,7 @@ import { useReducer, useState } from "react";
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
 import ExpenseInfo from "./ExpenseInfo/ExpenseInfo";
 import ExpenseList from "./ExpenseList/ExpenseList";
+import "./App.css";
 
 const initialState  = {
   expenses:[]
@@ -66,7 +67,7 @@ export default function App(){
 
   return(
     <>
-      <h2 className="main Heading">Expense Tracker</h2>
+      <h2 className="mainHeading">Expense Tracker</h2>
       <div className="App">
         <ExpenseForm 
           addExpense={addExpense} 

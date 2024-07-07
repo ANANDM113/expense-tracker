@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mainHeading{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.App{
+    font-family: "Lato",sans-serif;
+    min-height: 100vh;
+    --input-width: 95%;
+    --input-height: 2rem;
+}
+
+.expenseContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
+    width: 350px;
+}

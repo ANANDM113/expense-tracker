@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import styles from "./ExpenseForm.module.css";
 
 const ExpenseForm   =   ({
     addExpense,
@@ -58,11 +59,12 @@ const ExpenseForm   =   ({
         }
 
         return(
-            <form onSubmit={handleSubmit}>
-                <h4>Add new transaction</h4>
+            <form onSubmit={handleSubmit} className={styles.form}>
+                <h3>{expenseToUpdate ? "Edit " : "Add new "}transaction</h3>
                 
                 <label htmlFor="inputText">Text</label>
                 <input type="text" 
+                    className={styles.input}
                     placeholder="Enter Text..."
                     ref={expenseTextInput}
                     id="inputText"
@@ -73,12 +75,15 @@ const ExpenseForm   =   ({
                     <div>(negative-expense , positive-income)</div>
                 </div>
                 <input type="number"
+                    className={styles.input}
                     placeholder="Enter Amount..."
                     ref={expenseAmountInput}
                     id="inputAmount"
                     required
                 />
-                <button>Add Transaction</button>
+                <button className={styles.submitBtn}>{expenseToUpdate ? "Edit " : "Add "}
+                    Transaction
+                </button>
             </form>
         );
     }
