@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const ExpenseForm   =   ({
     addExpense,
@@ -9,6 +9,17 @@ const ExpenseForm   =   ({
         const expenseTextInput  =   useRef();
         const expenseAmountInput    =   useRef();
         
+        useEffect(()=>{
+           
+            if(!expenseToUpdate){
+                return;
+            }
+
+            expenseTextInput.current.value  =   expenseToUpdate.text;
+            expenseAmountInput.current.value    =   expenseToUpdate.amount;
+        
+        },[expenseToUpdate])
+
         const handleSubmit  =   (e) =>  {
             e.preventDefault();
             const expenseText   =   expenseTextInput.current.value;
