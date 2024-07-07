@@ -1,4 +1,7 @@
 import { useReducer, useState } from "react";
+import ExpenseForm from "./ExpenseForm/ExpenseForm";
+import ExpenseInfo from "./ExpenseInfo/ExpenseInfo";
+import ExpenseList from "./ExpenseList/ExpenseList";
 
 const initialState  = {
   expenses:[]
@@ -8,8 +11,9 @@ const reducer  =  (state,action) => {
   const {payload} = action;
   switch(action.type){
     case "ADD_EXPENSE":{
+      
       return{
-        expenses: [payload.expense,...state.expense]
+        expenses: [payload.expense,...state.expenses] 
       }
     }
     case "REMOVE_EXPENSE":{
@@ -19,7 +23,7 @@ const reducer  =  (state,action) => {
     }
     case "UPDATE_EXPENSE":{
       const expenseDuplicate  = [...state.expenses];
-      expenseDuplicate[expensePos]  = payload.expense;
+      expenseDuplicate[payload.expensePos]  = payload.expense;
       return{
         expenses: expenseDuplicate
       }
@@ -30,7 +34,7 @@ const reducer  =  (state,action) => {
 } 
 
 export default function App(){
-
+  
   const[state,dispatch] = useReducer(reducer,initialState);
   const[expenseToUpdate,setExpenseToUpdate] = useState(null);
 

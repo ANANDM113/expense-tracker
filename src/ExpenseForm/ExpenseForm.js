@@ -67,7 +67,7 @@ const ExpenseForm   =   ({
                     id="inputAmount"
                     required
                 />
-                <button>Transaction</button>
+                <button>Add Transaction</button>
             </form>
         );
     }
